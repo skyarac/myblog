@@ -10,7 +10,7 @@ import java.util.List;
 /**
  *
  * 泛型工具类
- * @author LH
+ * @author arac  Dao层架构时用
  * 
  */
 public class GenericsUtils {

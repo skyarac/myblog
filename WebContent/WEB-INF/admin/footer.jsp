@@ -4,7 +4,7 @@
 </tbody>
 </table>
 <div>
-<p align="center">欢迎使用 &copy; <a href="" target="_blank">lhlog</a></p>
+<p align="center">欢迎使用 &copy; <a href="" target="_blank">wetuo</a></p>
 </div>
 </div>
 </body>

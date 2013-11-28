@@ -9,7 +9,7 @@ import org.wetuo.util.PageBean;
 
 /**
  * <p>DAO层基础接口<p>
- * @author LH
+ * @author arac
  * 
  */
 public interface BaseDAO<T> {

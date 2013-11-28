@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 
 /**
  * <p>字符串截取辅助类<p>
- * @author LH
+ * @author arac
  * 
  */
 public class CutHtml{

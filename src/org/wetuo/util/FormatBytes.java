@@ -8,7 +8,7 @@ import java.io.IOException;
 
 /**
  * <p>格式化文件大小辅助类<p>
- * @author LH
+ * @author arac
  * 
  */
 public class FormatBytes {

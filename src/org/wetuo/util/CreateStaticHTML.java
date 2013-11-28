@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponseWrapper;
 
 /**
  * <p>页面静态化辅助方法<p>
- * @author LH
+ * @author arac
  * 
  */
 public class CreateStaticHTML {

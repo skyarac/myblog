@@ -6,7 +6,7 @@ import org.apache.struts2.ServletActionContext;
 
 /**
  * <p>获取用户IP辅助类<p>
- * @author LH
+ * @author arac
  * 
  */
 public class IpUtils {

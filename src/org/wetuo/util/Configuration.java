@@ -3,7 +3,7 @@ import java.util.ResourceBundle;
 /**
  * 
  * <p>读取properties文件辅助类</p>
- * @author LH
+ * @author arac
  * 
  */
 public class Configuration {

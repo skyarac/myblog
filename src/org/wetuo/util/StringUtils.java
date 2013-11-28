@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
 /**
  * 
  * <p>常用字符串操作辅助类</p>
- * @author LH
+ * @author arac
  * 
  */
 public class StringUtils {

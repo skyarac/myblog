@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- 伪静态处理 -->
 <urlrewrite> 
 	<rule>
     	<note>echo_log</note>

@@ -3,7 +3,7 @@ package org.wetuo.util;
 import java.util.List;
 /**
  * <p>分页辅助类<p>
- * @author LH
+ * @author arac
  * 
  */
 public class PageBean <T> {

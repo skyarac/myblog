@@ -27,7 +27,7 @@ import com.wetuo.blog.dao.BaseDAO;
 
 /**
  * <p>DAO层基础接口实现类<p>
- * @author LH
+ * @author arac
  * 
  */
 @SuppressWarnings("unchecked")

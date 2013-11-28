@@ -17,7 +17,7 @@ if(request.getServerPort()==80){
 <link href="admin/css/css-main.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="admin/js/jquery-1.4.4.min.js"></script>
 <script type="text/javascript" src="admin/js/common.js"></script>
-<title>LHLOG - 管理中心</title>
+<title>wetuo - 管理中心</title>
 </head>
 <body>
 <div class="center">
@@ -25,9 +25,9 @@ if(request.getServerPort()==80){
   <tbody>
   <tr>
     <td width="9" id="headerleft"></td>
-    <td width="125"  class="logo" align="left"><a href="admin/home.html" title="返回管理首页">lhlog</a></td>
+    <td width="125"  class="logo" align="left"><a href="admin/home.html" title="返回管理首页">wetuo</a></td>
     <td class="vesion" width="20">1.2.1</td>
-    <td  class="home" align="left"><a href="<%=basePath%>" target="_blank" title="在新窗口浏站点">ICUIT 的个人博客</a></td>
+    <td  class="home" align="left"><a href="<%=basePath%>" target="_blank" title="在新窗口浏站点">边走边乔的个人博客</a></td>
     <td align="right" nowrap class="headtext">
 		你好，<a href="javascript:void(0)">${session.loginUser.username} <img src="admin/images/avatar.jpg" align="top" height="20" width="20" style="border:1px #FFFFFF solid;" /></a>&nbsp;&nbsp;|&nbsp;&nbsp;
 		<a href="logout.html">退出</a>
