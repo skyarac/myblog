@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlrewrite> 
+	<rule>
+    	<note>echo_log</note>
+        <from>^/log_([0-9]+).html</from>  
+        <to>/log?id=$1</to>  
+    </rule>  
+	<rule>
+    	<note>logout</note>
+        <from>^/logout.html</from>  
+        <to>/admin/login!logout</to>  
+    </rule>  
+	<rule>
+    	<note>add_log</note>
+        <from>^/admin/add_log.html</from>  
+        <to>admin/blog!preAdd</to>  
+    </rule>
+    <rule>
+    	<note>add_home</note>
+        <from>^/admin/home.html</from>  
+        <to>admin/login!login</to>  
+    </rule>
+</urlrewrite>
+

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!-- 验证码 -->
+	<package name="validationCode" extends="struts-default" namespace="/code">
+       <result-types>
+           <result-type name="ValidateImage" class="org.wetuo.validation.action.ImageResult" />
+       </result-types>
+       <action name="ValidateImage" class="org.wetuo.validation.action.ValidationCodeAction" method="doDefault">
+           <result name="image" type="ValidateImage" />
+       </action>
+    </package>
+</struts>

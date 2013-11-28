@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+	"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+    <constant name="struts.multipart.maxSize" value="1000000000" />
+    <constant name="struts.multipart.saveDir" value="/tmp"/>
+	<constant name="struts.devMode" value="false" />
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+
+	<!-- 前台Package -->
+	<package name="homepage"  extends="struts-default" namespace="/">
+		<default-action-ref name="pagenotfound" />
+		<global-results>
+			<result name="client-abort-exception">/ignore.jsp </result><!-- 采用Struts下载文件时，点击取消报异常解决方法 -->
+		</global-results>
+		<action name="pagenotfound"><result>/404.html</result></action>
+		<!-- 前台日志列表显示 -->
+		<action name="home" class="homeAction" method="serch">
+			<result>/WEB-INF/pages/main.jsp</result>
+		</action>
+		<action name="log" class="blogAction" method="load">
+			<result name="load">/WEB-INF/pages/echo_log.jsp</result>
+		</action>
+	</package>
+	
+	
+	
+	<!-- 后台全局Package -->
+    <package name="admin-def"  extends="struts-default">
+    	<interceptors>
+			<interceptor name="ActionInterceptor" class="com.wetuo.blog.interceptor.ActionInterceptor" />
+			<interceptor-stack name="InterceptorStack">
+				<interceptor-ref name="ActionInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="InterceptorStack" />
+		<default-action-ref name="pagenotfound" />
+		<global-results>
+			<result name="nologin">/admin/index.jsp</result>
+		</global-results>
+		<action name="pagenotfound"><result>/pageNotFind.html</result></action>
+	</package>
+	<!-- 后台Package -->
+	<package name="admin" extends="admin-def" namespace="/admin">
+		<!-- 用户 -->
+		<action name="login" class="loginAction">
+			<result name="loginSuccess">/WEB-INF/admin/index.jsp</result>
+			<result name="home">/WEB-INF/admin/index.jsp</result>
+			<result name="loginFail">/admin/index.jsp</result>
+			<result name="logout">/admin/index.jsp</result>
+		</action>
+		<!-- 日志分类 -->
+		<action name="sort" class="sortAction">
+			<result name="loadAll">/WEB-INF/admin/sort.jsp</result>
+			<result name="add" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">sort</param>
+            	<param name="method">loadAll</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+			<result name="update" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">sort</param>
+            	<param name="method">loadAll</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">sort</param>
+            	<param name="method">loadAll</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+		</action>
+		<!-- 日志标签 -->
+		<action name="tag" class="tagAction">
+			<result name="loadAll">/WEB-INF/admin/tag.jsp</result>
+			<result name="delTags" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">tag</param>
+            	<param name="method">loadAll</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+		</action>
+		<!-- 友情链接 -->
+		<action name="link" class="linkAction">
+			<result name="loadAllForAdmin">/WEB-INF/admin/link.jsp</result>
+			<result name="add" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">link</param>
+            	<param name="method">loadAllForAdmin</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+			<result name="delete" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">link</param>
+            	<param name="method">loadAllForAdmin</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+		</action>
+		
+		
+		<action name="blog" class="blogAction">
+			<result name="addBlog" type="redirectAction">
+				<param name="namespace">/admin</param>
+            	<param name="actionName">blog</param>
+            	<param name="method">preAdd</param>
+            	<param name="msg">${msg}</param>
+            	<param name="err">${err}</param>
+			</result>
+			<result name="preAdd">/WEB-INF/admin/add_log.jsp</result>
+		</action>
+	</package>
+	
+	<!-- xheditor文件上传 -->
+	<package name="xheditor" extends="admin-def" namespace="/editor">
+		<action name="upload" class="org.wetuo.xheditor.upload.action.EditorUploadAction" method="upload"></action>
+	</package>
+	<!-- 验证码 -->
+	<include file="validationcode.xml"></include>
+</struts>
+	
